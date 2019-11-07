@@ -11,11 +11,16 @@ Birthed out of our Slack org, The Reformed Devs have begun monthly coding challe
 * [June 2019](https://github.com/ReformedDevs/challenge-2019-06)
 * [July 2019](https://github.com/ReformedDevs/challenge-2019-07)
 * [September 2019](https://github.com/ReformedDevs/challenge-2019-09)
+* [October 2019](https://github.com/ReformedDevs/challenge-2019-10)
 
 #### Future Challenge Ideas
 
 * Boggle Solver
 * Sudoku Generator/Solver
+* Algorithm trainer
+* Next best scrabble move
+* Provide a game API and have solutions play against each other
+* Prisoner puzzle best time
 
 ### This Month's Challenge
 
@@ -39,6 +44,7 @@ Your solution directory should include the following:
 
 * `build.sh` file (only if you need to build/compile your solution)
 * `run.sh` file (a shell file that has the command to execute your solution)
+  * **Important**: Make sure your solution can take an input. The letters to handle will be sent as a string in a BASH variable. See example folder for details on how this will work.
 * the file(s) needed to build and run your solution.
 
 See the `example` directory for more guidance.
@@ -47,22 +53,29 @@ See the `example` directory for more guidance.
 
 ### Running the Tests (I.e. Docker and Stuff)
 
-The Docker image currently supports these languages:
+The Docker image is now moved to its own repo and is hosted on Dockerhub.
+
+* [Source](https://github.com/ReformedDevs/challenge-docker)
+* [Dockerhub](https://hub.docker.com/r/drewpearce/trd-challenge)
+
+The image tagged latest currently supports these languages:
 
 * C/C++
-* Python 3.6
-* Go 1.12.8
-* Rust
+* .NET
 * Node 11
-* PHP 7.2
+* Python 3.6
+* Ruby
+* Rust
+
+If you want to add support for another language, you can make a PR to the Source repo referenced above. If you need help, come on over to the #monthly-challenge channel on our Slack.
 
 You can build the container locally by running `./build_docker.sh`.
 
 You can run the container lcoally by running `./run_docker.sh` after building the container.
 
-You can run the tests locally (assuming you have all the language support installed) by running `python run_tests.py`.
+You can run the tests locally (assuming you have all the language support installed) by running `python(3) run_solutions.py`.
 
-If you only want to run specific directories on a local run (i.e. just test your solution), run `python run_tests.py local comma-separated,list-of,solution-dirs`.
+If you only want to run specific directories on a local run (i.e. just test your solution), run `python(3) run_solutions.py comma-separated,list-of,solution-dirs`.
 
 ### Leaderboard
 
